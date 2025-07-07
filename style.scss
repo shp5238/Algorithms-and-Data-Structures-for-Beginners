@@ -8,6 +8,8 @@
 @import "reset";
 @import "variables";
 // Syntax highlighting @import is at the bottom of this file
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
 
 /**************/
 /* BASE RULES */
@@ -19,7 +21,7 @@ html {
 
 body {
   background: $white;
-  font-family: Consolas, monospace;
+  font-family: 'Source Code Pro', monospace;
   font-size: 18px;
   line-height: 1.6;
   color: #333333; // replaced $darkGray with nicer dark gray hex
