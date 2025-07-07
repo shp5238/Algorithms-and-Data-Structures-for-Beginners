@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Milestone: Hitting 25 Neetcode Problems Completed
+title: Hitting 25 Neetcode Problems Completed
 ---
 
 Hello again! 
