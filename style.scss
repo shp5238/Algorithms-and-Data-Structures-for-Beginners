@@ -1,3 +1,6 @@
+---
+---
+
 //
 // IMPORTS
 //
@@ -16,10 +19,10 @@ html {
 
 body {
   background: $white;
-  font-family: Consolas, monospace;  // Use Consolas as primary font
+  font-family: Consolas, monospace;
   font-size: 18px;
-  line-height: 1.6;                  // Slightly more breathing room
-  color: #333333;                   // Dark gray for easy reading
+  line-height: 1.6;
+  color: #333333; // replaced $darkGray with nicer dark gray hex
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
@@ -29,63 +32,62 @@ body {
 .container {
   margin: 0 auto;
   max-width: 740px;
-  padding: 0 15px;
+  padding: 0 10px;
   width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222222;                  // Darker gray for headings
-  font-weight: 700;
-  line-height: 1.3;
-  margin: 1.5em 0 0.75em 0;
+  font-family: $helveticaNeue;
+  color: #222222; // replaced $darkerGray with hex for crisp headings
+  font-weight: bold;
+
+  line-height: 1.7;
+  margin: 1em 0 15px;
   padding: 0;
 
   @include mobile {
-    line-height: 1.2;
+    line-height: 1.4;
   }
 }
 
 h1 {
-  font-size: 2.2rem;               // ~35px
+  font-size: 30px;
   a {
     color: inherit;
-    text-decoration: none;
   }
 }
 
 h2 {
-  font-size: 1.75rem;              // ~28px
+  font-size: 24px;
 }
 
 h3 {
-  font-size: 1.3rem;               // ~21px
+  font-size: 20px;
 }
 
 h4 {
-  font-size: 1.125rem;             // ~18px
-  color: #666666;                  // softer gray
+  font-size: 18px;
+  color: #666666; // replaced $gray with a slightly warmer gray
 }
 
 p {
-  margin: 1em 0;
-  font-weight: 400;
+  margin: 15px 0;
 }
 
 a {
-  color: #1a73e8;                 // Google Blue-like
+  color: #1a73e8; // nicer blue replacing $blue
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease;
 
   &:hover, &:active {
-    color: #0c47b7;               // Darker blue on hover
+    color: #0c47b7; // darker blue on hover
     text-decoration: underline;
   }
 }
 
 ul, ol {
-  margin: 1em 0;
+  margin: 15px 0;
   padding-left: 30px;
 }
 
@@ -97,6 +99,10 @@ ol {
   list-style-type: decimal;
 }
 
+ol ul, ul ol, ul ul, ol ol {
+  margin: 0;
+}
+
 ul ul, ol ul {
   list-style-type: circle;
 }
@@ -106,46 +112,52 @@ em, i {
 }
 
 strong, b {
-  font-weight: 700;
+  font-weight: bold;
 }
 
 img {
   max-width: 100%;
-  height: auto;
-  border-radius: 5px;
 }
 
-/* Date style */
+// Fixes images in popup boxes from Google Translate
+.gmnoprint img {
+  max-width: none;
+}
+
 .date {
   font-style: italic;
-  color: #999999;
-  font-size: 0.9rem;
+  color: #999999; // softer date color instead of $gray
 }
 
-/* Selection highlight */
+// Specify the color of the selection
 ::-moz-selection {
-  color: #ffffff;
-  background: #1a73e8;
+  color: $black;
+  background: $lightGray;
 }
 ::selection {
-  color: #ffffff;
-  background: #1a73e8;
+  color: $black;
+  background: $lightGray;
 }
 
-/* Clearfix hack */
+// Nicolas Gallagher's micro clearfix hack
+// http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix:before,
 .clearfix:after {
-  content: " ";
-  display: table;
+    content: " ";
+    display: table;
 }
 
 .clearfix:after {
-  clear: both;
+    clear: both;
 }
 
 /*********************/
 /* LAYOUT / SECTIONS */
 /*********************/
+
+//
+// .masthead
+//
 
 .wrapper-masthead {
   margin-bottom: 50px;
@@ -153,7 +165,7 @@ img {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid $lightGray;
 
   @include mobile {
     text-align: center;
@@ -169,7 +181,7 @@ img {
   @include mobile {
     float: none;
     display: block;
-    margin: 0 auto 15px auto;
+    margin: 0 auto;
   }
 
   img {
@@ -184,24 +196,23 @@ img {
     float: none;
     display: block;
     margin: 0 auto;
-    text-align: center;
   }
 }
 
 .site-name {
   margin: 0;
-  color: #222222;
+  color: #333333; // replaced $darkGray with hex
   cursor: pointer;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
+  font-family: $helveticaNeue;
+  font-weight: 300;
+  font-size: 28px;
   letter-spacing: 1px;
 }
 
 .site-description {
-  margin: 5px 0 0 0;
-  color: #666666;
-  font-size: 1rem;
+  margin: -5px 0 0 0;
+  color: #666666; // replaced $gray with hex
+  font-size: 16px;
 
   @include mobile {
     margin: 3px 0;
@@ -210,28 +221,27 @@ img {
 
 nav {
   float: right;
-  margin-top: 28px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.125rem;
+  margin-top: 23px; // @TODO: Vertically middle align
+  font-family: $helveticaNeue;
+  font-size: 18px;
 
   @include mobile {
     float: none;
-    margin-top: 15px;
+    margin-top: 9px;
     display: block;
-    font-size: 1rem;
+    font-size: 16px;
   }
 
   a {
-    margin-left: 25px;
-    color: #222222;
+    margin-left: 20px;
+    color: #333333; // replaced $darkGray with hex
     text-align: right;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 1px;
-    transition: color 0.3s ease;
 
     @include mobile {
       margin: 0 10px;
-      color: #1a73e8;
+      color: #1a73e8; // replaced $blue with hex
     }
 
     &:hover {
@@ -241,57 +251,50 @@ nav {
   }
 }
 
+//
+// .main
+//
+
 .posts > .post {
-  padding-bottom: 2.5em;
-  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 2em;
+  border-bottom: 1px solid $lightGray;
 }
 
 .posts > .post:last-child {
-  padding-bottom: 1.5em;
+  padding-bottom: 1em;
   border-bottom: none;
 }
 
 .post {
   blockquote {
-    margin: 1.8em 1em;
-    border-left: 3px solid #cccccc;
+    margin: 1.8em .8em;
+    border-left: 2px solid #666666; // replaced $gray with hex
     padding: 0.1em 1em;
     color: #666666;
-    font-size: 1.375rem;
+    font-size: 22px;
     font-style: italic;
   }
 
   .comments {
-    margin-top: 15px;
+    margin-top: 10px;
   }
 
   .read-more {
     text-transform: uppercase;
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: #1a73e8;
-    cursor: pointer;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: #0c47b7;
-      text-decoration: underline;
-    }
+    font-size: 15px;
   }
 }
 
 .wrapper-footer {
-  margin-top: 60px;
+  margin-top: 50px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  background-color: #f9f9f9;
+  background-color: $lightGray;
 }
 
 footer {
   padding: 20px 0;
   text-align: center;
-  color: #666666;
-  font-size: 0.9rem;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
