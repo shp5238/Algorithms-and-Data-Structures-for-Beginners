@@ -243,11 +243,11 @@ nav {
 
     @include mobile {
       margin: 0 10px;
-      color: #1a73e8; // replaced $blue with hex
+      color: #e03474; // nice Razzmatazz pink
     }
 
     &:hover {
-      color: #0c47b7;
+      color: #b49efe; //tropical indigo color
       text-decoration: underline;
     }
   }
