@@ -77,13 +77,13 @@ p {
 }
 
 a {
-  color: #1a73e8; // nicer blue replacing $blue
+  color: #e03474; // nicer Razzmatazz pink
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease;
 
   &:hover, &:active {
-    color: #0c47b7; // darker blue on hover
+    color: #b49efe; // tropical indigo on hover
     text-decoration: underline;
   }
 }
