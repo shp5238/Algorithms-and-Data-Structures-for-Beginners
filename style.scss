@@ -31,6 +31,24 @@ body {
   padding: 0;
 }
 
+//ADDED STUFF HERE TO MAKE FOOTER AT BOTTOM
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+//END OF ADDING STUFF
+
 .container {
   margin: 0 auto;
   max-width: 740px;
@@ -290,8 +308,10 @@ nav {
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+ /* border-bottom: 1px solid #ddd; 
+  background-color: $lightGray; */
+  //background-color: #da67a2; // Thulian pink
+  background-color: #e4abc6; // Pink lavendar
 }
 
 footer {
@@ -303,4 +323,82 @@ footer {
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
+
+//DARK THEME EDITS BELOW! 
+/* Dark Theme Overrides */
+body[data-theme='dark'] {
+  background: #222222;
+  color: #eeeeea;
+
+  .site-name,
+  .site-description,
+  h1, h2, h3, h4, h5, h6 {
+    color: #eeeeea;
+  }
+
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
+    color: #eeeeea;
+
+    &:hover{
+      color: #b49efe;
+    }
+  }
+
+  nav a {
+    color: #eeeeea;
+
+    &:hover {
+      color: #b49efe;
+    }
+  }
+
+  .site-name a {
+    color: #eeeeea;
+  }
+
+  h4 {
+    color: #bbbbbb;
+  }
+
+  .post blockquote {
+    color: #bbbbbb;
+    border-left: 2px solid #bbbbbb;
+  }
+
+  .date {
+    color: #aaaaaa;
+  }
+
+  .wrapper-footer {
+    border-top: 1px solid #444444;
+    background-color: #3b3b3b;
+  }
+
+  a {
+    color: #e03474;
+
+    &:hover,
+    &:active {
+      color: #b49efe;
+    }
+  }
+
+  ::selection {
+    background: #444444;
+    color: #eeeeea;
+  }
+
+  ::-moz-selection {
+    background: #444444;
+    color: #eeeeea;
+  }
+
+  .masthead {
+    border-bottom: 1px solid #444444;
+  }
+
+  .posts > .post {
+    border-bottom: 1px solid #444444;
+  }
+}
 
