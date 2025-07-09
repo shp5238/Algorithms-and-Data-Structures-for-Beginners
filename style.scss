@@ -180,12 +180,12 @@ img {
 //
 
 .wrapper-masthead {
-  margin-bottom: 50px;
+  margin-bottom: 0px; //space between line and header img, was 50px
 }
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  //border-bottom: 1px solid $lightGray; //No border needed?
 
   @include mobile {
     text-align: center;
