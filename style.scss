@@ -171,6 +171,96 @@ img {
     clear: both;
 }
 
+/*ADDED CODE HERE: 
+.highlight {
+  background: #2d2d2d;
+  color: #eee;
+  padding: 1em;
+  border-radius: 8px;
+  font-size: 0.95em;
+  overflow-x: auto;
+}*/
+
+//Change made here 5:13
+/* === Ultimate no-white-edge dark code block styling === */
+
+.highlight,
+.highlight pre,
+pre,
+.highlight pre code,
+pre code {
+  background: #2d2d2d !important;
+  color: #eee !important;
+
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 1em !important;
+  border-radius: 8px !important;
+  font-family: 'Source Code Pro', monospace !important;
+  font-size: 0.95em !important;
+  line-height: 1.4 !important;
+  white-space: pre-wrap !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 1 !important;
+  overflow-x: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Remove any backgrounds or shadows on nested spans */
+.highlight pre code span,
+pre code span {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  text-shadow: none !important;
+}
+
+/* Hide scrollbars */
+.highlight pre::-webkit-scrollbar,
+pre::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  margin: 0 !important;
+}
+
+.highlight pre:focus,
+pre:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Clip overflow on container to remove any visual glitches */
+.highlight {
+  overflow: hidden !important;
+  margin-right: -1px !important;
+  margin-bottom: -1px !important;
+}
+
+/* Inline code styling */
+code:not(pre code) {
+  background-color: #444 !important;
+  color: #eee !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 4px !important;
+  font-family: 'Source Code Pro', monospace !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*********************/
 /* LAYOUT / SECTIONS */
 /*********************/
